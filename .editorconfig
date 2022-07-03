@@ -1,0 +1,10 @@
+
+# 4 space indentation
+[{*.py, *.java, *.xml, *.gradle}]
+indent_style = space
+indent_size = 4
+
+# Matches the exact files either package.json or .travis.yml
+[{*.yaml, *.yml}]
+indent_style = space
+indent_size = 2

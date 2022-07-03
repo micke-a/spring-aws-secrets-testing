@@ -1,0 +1,14 @@
+
+# Needed when using the by-naming-convention loading
+aws:
+  secretsmanager:
+    # Must be enabled, or spring.config.import is also disabled
+    enabled: true
+    # Make these secrets optional, otherwise service startup is aborted
+    fail-fast: false
+    prefix: /secret/kube-ns
+    # Default is meant to be `spring.application.name` but is null, recon because this runs in boostrap phase
+    name: my-service
+    # Default is `application`
+    # Kind of like a `global` secret
+    default-context: application

@@ -1,0 +1,25 @@
+
+# Here when only using spring.config.import
+#aws:
+#  secretsmanager:
+#    enabled: true
+
+spring:
+  application:
+    name: my-service
+  config:
+    import: aws-secretsmanager:/secret/kube-ns/${spring.application.name}/test-secret
+    use-legacy-processing: false
+
+
+logging:
+  level:
+    root: INFO
+    io.awspring.cloud: TRACE
+    org.springframework.boot.context.config: DEBUG
+    com.amazonaws.services.secretsmanager: DEBUG
+
+app:
+  message: "Hello there"
+  other-message: "Another message in application.yaml"
+
